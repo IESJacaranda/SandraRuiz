@@ -9,22 +9,26 @@ y el valor máximo y mínimo introducido.
 """
 
 def pideNumeros():
-    listaNumeros =[int(input("Dime un numéro (0 para parar): "))]
-    print(mediaNum(listaNumeros))
-    print(obtenerElMenorElemento(listaNumeros))
-    print(obtenerElMayorElemento(listaNumeros))
+    num=-1
+    listaNumeros = []
+    while num!=0:
+        num=int(input("Dime un número (0 para parar): "))
+        if num!=0:
+            listaNumeros.append(num)
+                    
+    print("La media de los numeros es "+str(mediaNum(listaNumeros)))
+    print("El valor minimo introducido es "+str(obtenerElMenorElemento(listaNumeros)))
+    print("El valor maximo introducido es "+str(obtenerElMayorElemento(listaNumeros)))
 
             
 def mediaNum(numbers):
-    x=0
     total=0
-    while x==0:
-        listaNumeros.append(int(input("Dime un número (0 para parar): "))
-        if number==0:
-            total+=numbers
-        else:
-            x+=1
-    return(total/numbers) 
+    numberCounting=0
+    for i in listaNumeros:
+        numberCounting+=1
+        total+=i
+
+    return(total/numberCounting) 
 
     
 def obtenerElMenorElemento(numbers):
@@ -43,5 +47,7 @@ def obtenerElMayorElemento(numbers):
             mayor=i
             
     return mayor
+    
+
 
 pideNumeros()
