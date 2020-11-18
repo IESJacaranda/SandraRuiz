@@ -11,22 +11,47 @@ puede ser negativa.
 
 def calculaPotencia(base, exponente):
     resultado=1
-    if exponente>=0:
+    if exponente>0:
         for i in range (1,exponente+1):
             resultado*=base
         return resultado
     elif exponente<0:
-        exponente=0-exponente
+        exponente=0-exponente #exponente=-exponente
         for i in range (1,exponente+1):
             resultado*=base
         return 1/resultado
 
-"""
-base=int(input("De que numero quieres calcular la potencia? "))
-exponente=int(input("A que numero quieres elevarlo? "))
+
+#base=int(input("De que numero quieres calcular la potencia? "))
+#exponente=int(input("A que numero quieres elevarlo? "))
+
+
+print(calculaPotencia(2, 2))
+print(calculaPotencia(5, 8))
+print(calculaPotencia(2, -2))
+print(calculaPotencia(-2, 5))
+#assert(calculaPotencia(2, 2)== 4)
+#assert(calculaPotencia(5, 8)== 390625)
+#assert(calculaPotencia(2, -2)== 0.25)
+#assert(calculaPotencia(-2, 5) == -32)
+
 """
 
-print(calculaPotencia(2, 2) == 4)
-print(calculaPotencia(5, 8) == 390625)
-print(calculaPotencia(2, -2) == 0.25)
-print(calculaPotencia(-2, 5) == -32)
+Otra solución más comprimida del algoritmo
+
+def calculaPotencia(base, exponente):
+    resultado = 1
+    
+    if exponente >0:
+        base = 1/base
+        exponente=-exponente
+    
+    for i in range(exponente):
+    resultado=resultado*base
+    
+    retun resultado
+    
+    
+print(calculaPotencia(-2, -9)==-0.001953125)
+assert(calculaPotencia(2, 10)==1024)
+"""
