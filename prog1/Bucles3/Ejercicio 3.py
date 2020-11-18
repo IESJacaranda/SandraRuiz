@@ -8,20 +8,9 @@ Debe informar de la media de los números leídos (sin tener en cuenta el 0)
 y el valor máximo y mínimo introducido.
 """
 
-def pideNumeros():
-    num=-1
-    listaNumeros = []
-    while num!=0:
-        num=int(input("Dime un número (0 para parar): "))
-        if num!=0:
-            listaNumeros.append(num)
-                    
-    print("La media de los numeros es "+str(mediaNum(listaNumeros)))
-    print("El valor minimo introducido es "+str(obtenerElMenorElemento(listaNumeros)))
-    print("El valor maximo introducido es "+str(obtenerElMayorElemento(listaNumeros)))
 
             
-def mediaNum(numbers):
+def media(numbers):
     total=0
     numberCounting=0
     for i in numbers:
@@ -31,7 +20,7 @@ def mediaNum(numbers):
     return(total/numberCounting) 
 
     
-def obtenerElMenorElemento(numbers):
+def minimo(numbers):
     menor = numbers[0]
     for i in numbers:
         if i < menor:
@@ -40,14 +29,23 @@ def obtenerElMenorElemento(numbers):
     return menor
 
 
-def obtenerElMayorElemento(numbers):
+def maximo(numbers):
     mayor = numbers[0]
     for i in numbers:
         if i > mayor:
             mayor=i
             
     return mayor
+
+
+def calculaMediaMinimoMaximo():
+    num=-1
+    listaNumeros = []
+    while num!=0:
+        num=int(input("Dime un número (0 para parar): "))
+        if num!=0:
+            listaNumeros.append(num)
+    return "La media es %s, el minimo %s y el maximo %s" % (media(listaNumeros), minimo(listaNumeros), maximo(listaNumeros))                
     
-
-
-pideNumeros()
+print(calculaMediaMinimoMaximo())
+    
