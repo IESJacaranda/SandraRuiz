@@ -24,7 +24,7 @@ def pideNumeros():
 def mediaNum(numbers):
     total=0
     numberCounting=0
-    for i in listaNumeros:
+    for i in numbers:
         numberCounting+=1
         total+=i
 
