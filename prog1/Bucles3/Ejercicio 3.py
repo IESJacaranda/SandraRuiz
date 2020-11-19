@@ -54,9 +54,6 @@ print(calculaMediaMinimoMaximo())
 La resolución de clase (permite salida si el numero introducido es 0).
 
 def calculaMediaMinimoMaximo():
-    maximo = 0
-    minimo = 0
-    media = 0
     sumatorio = 0
     
     numero = int(input("Introduce un número: "))
