@@ -24,6 +24,4 @@ def pideLados():
         
     print(perimetro)
         
-BUSCAR LOS POLÍGONOS IRREGULARES
-
 pideLados()

@@ -51,7 +51,7 @@ print(calculaMediaMinimoMaximo())
 
 
 """
-La resolución de clase (permite salida si el numero introducido es 0).
+La solución de clase sin listas (permite salida si el numero introducido es 0).
 
 def calculaMediaMinimoMaximo():
     sumatorio = 0
@@ -74,5 +74,38 @@ def calculaMediaMinimoMaximo():
     return "La media es %s, el minimo %s y el maximo %s" % (sumatorio/i, minimo, maximo)                
     
 print(calculaMediaMinimoMaximo())
-"""
+
+
+Solución de clase con listas (con listas es menos eficiente, pq hay que
+recorrer la lista completa):
+
+def pideNumeros():
+    listaNumeros = []
     
+    num=int(input("Dime un número (0 para parar): "))
+    listaNumeros.append(num)
+    
+    while num!=0:
+        num=int(input("Dime un número (0 para parar): "))
+        if numero!=0
+            listaNumeros.append(num)
+    
+    return listaNumeros            
+    
+    
+def calculaMinMaxMedia(lista):
+    sumatorio = 0
+    minimo = 0
+    maximo = 0
+    
+    for numero in lista:
+        sumatorio += numero
+        if numero < minimo:
+            minimo = numero
+        if numero > maximo
+            maximo = numero
+            
+    return "La media es %s, el minimo %s y el maximo %s" % (sumatorio/len(lista), minimo, maximo)                
+
+print(calculaMinMaxMedia(pideNumeros()))
+"""
