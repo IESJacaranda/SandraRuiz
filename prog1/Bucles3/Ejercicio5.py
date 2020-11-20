@@ -32,7 +32,7 @@ def dimeCuadrante():
     while True:
         x=float(input("Dime la coordenada x: "))
         y=float(input("Dime la coordenada y: "))
-        print("Ese punto pertenece a %s" % (calculaCuadrante (x,y)))
+        print("Ese punto pertenece a %s" % (calculaCuadrante(x, y)))
         
 """ podría ponerse más sintético
 def dimeCuadrante():

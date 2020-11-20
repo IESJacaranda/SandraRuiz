@@ -10,18 +10,29 @@ Se debe garantizar que los datos son correctos.
 """
 #perímetro = suma lados
 
-def pideLados():
-    numLado=(int(input("Cuantos lados tiene la figura? ")))
-    while numLado<3: 
-        numLado=(int(input("Cuantos lados tiene la figura? ")))
+def calculaPerimetro(listaLados):
     perimetro=0
-    for i in range(1,numLado+1):
+    for i in range(listaLados):
         longLado=(int(input("Cuanto mide el lado? ")))
         while longLado<=0:
             longLado=(int(input("No es correcto. Cuanto mide el lado? ")))
         perimetro+=longLado
+    
+    return perimetro
+
+def compruebaFigura(listaLados):
+    while numLado<3: 
+        list.append(numLado)
+    
         
-        
-    print(perimetro)
-        
+def pideLados():
+    listaLados= []
+
+    
+    
+    print("El perímetro es %s" % (calculaPerimetro(listaLados)))
+
+
+numLado=(int(input("Cuantos lados tiene la figura? ")))
+            
 pideLados()
