@@ -76,8 +76,11 @@ def calcularCambio(modo, cantidadAConvertir):
     
 mostrarMenu()
 opcion = input("Introduzca una opción: ")
-cantidadAConvertir = float(input("Introduce la cantidad a cambiar: ")
-resultado = calcularCambio(modo, cantidadAConvertir)
-print("El cambio de dólares a ... es igual a %s" % resultado) 
+while opcion!=str(7)
+    cantidadAConvertir = float(input("Introduce la cantidad a cambiar: ")
+    resultado = calcularCambio(modo, cantidadAConvertir)
+    print("El cambio de dólares a ... es igual a %s" % resultado)
+    print(mostrarMenu())
+    opcion = input("Introduzca una opción: ")
 
 """
