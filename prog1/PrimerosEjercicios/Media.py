@@ -1,0 +1,5 @@
+"""
+Calcula la media
+
+
+"""
