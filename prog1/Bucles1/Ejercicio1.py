@@ -1,6 +1,7 @@
 """
 Ejercicio 1
-Diseñar un programa para aprender a contar. El programa pedirá un número y mostrará todos los números comprendidos entre el 1 y el número introducido.
+Diseñar un programa para aprender a contar. El programa pedirá un número y mostrará todos los números comprendidos entre 
+el 1 y el número introducido.
 """
 #Solución usando bucle for
 

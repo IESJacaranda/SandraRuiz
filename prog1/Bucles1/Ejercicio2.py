@@ -1,6 +1,7 @@
 """
 Ejercicio 2
-Diseñar un programa que pida dos números. Deberá ver cuál de ellos es menor y mostrar todos los números comprendidos entre el valor menor y mayor, incluyendo ambos números.
+Diseñar un programa que pida dos números. Deberá ver cuál de ellos es menor y mostrar todos los números comprendidos 
+entre el valor menor y mayor, incluyendo ambos números.
 """
 
 #Solución usando bucle for
