@@ -10,8 +10,8 @@ el resultado de la quiniela. Debe asegurarse que los valores son correctos.
 
 """
 
-def numeroPartidos():
-    mensaje=""
+def calculaQuiniela():
+    resultado=""
     partido=int(input("Cuantos partidos se han jugado en esta jornada? "))
     while partido<=0:
         partido=int(input("Error. Cuantos partidos se han jugado en esta jornada? "))
@@ -23,11 +23,36 @@ def numeroPartidos():
         while golesVisitante<0:
             golesVisitante=int(input("Error. Numero de goles del equipo visitante: "))
         if golesLocal > golesVisitante:
-            mensaje="Resultado: 1"
+            resultado="Resultado: 1"
         elif golesLocal == golesVisitante:
-            mensaje="Resultado: X"
+            resultado="Resultado: X"
         else:
-            mensaje="Resultado: 2"
-        print(mensaje)
+            resultado="Resultado: 2"
+        print(resultado)
 
-numeroPartidos()    
+calculaQuiniela()
+
+
+'''
+Solución clase:
+
+
+numeroPartidos = int(input("Cuantos partidos hubo esta semana?")
+while numeroPartidos<=0:
+    numeroPartidos = int(input("Error. Cuantos partidos hubo esta semana?")
+def calculaResultadoQuiniela(partidos):
+    resultado = []
+    
+    for i in range(partidos):
+        golesLocal = int(input("Cuantos goles marco el equipo local?")
+        while golesLocal<0:
+            golesLocal = int(input("Error. Cuantos goles marco el equipo local?")
+        golesVisitante = int(input("Cuantos goles marco el equipo visitante?")
+        while golesVisitante<0:
+            golesVisitante = int(input("Error. Cuantos goles marco el equipo local?")
+        
+    return resultado
+    
+    
+    
+calculaResultadoQuiniela(numeroPartidos)
