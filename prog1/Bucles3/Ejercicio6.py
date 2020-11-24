@@ -3,43 +3,38 @@ Created on 17 nov.2020
 @author: Sandra Ruiz Jimenez
 
 Ejercicio 6
-Realizar un programa que solicite tres valores de los lados de un posible triángulo e informe
-si es un triángulo o no.
+Realizar un programa que solicite tres valores de los lados de un posible 
+triángulo e informe si es un triángulo o no.
 
 """
 
 
-def esTriangulo(): 
-    lado1=int(input("Introduce el primer lado: "))
-    while lado1<=0:
-        lado1=int(input("Error. Introduce el primer lado: ")) 
+primerLado = int(input("Introduce el primer lado:"))
+segundoLado = int(input("Introduce el primer lado:"))
+tercerLado = int(input("Introduce el primer lado:"))
+
+lados= [primerLado, segundoLado, tercerLado]
+
+def esTriangulo(lados):
+    esUnTriangulo = False
     
-    lado2=int(input("Introduce el segundo lado: "))
-    while lado2<=0:
-        lado2=int(input("Error. Introduce el segundo lado: ")) 
-    
-    lado3=int(input("Introduce el tercer lado: "))
-    while lado3<=0:
-        lado3=int(input("Error. Introduce el tercer lado: ")) 
-    
-    mensaje = ""
-    if (lado1+lado2)>lado3:
-        mensaje = "Es un triángulo"
-        
-    elif lado2+lado3>lado1:
-        mensaje = "Es un triángulo"
-    elif lado1+lado3>lado2:
-        mensaje = "Es un triángulo"    
+    if len(lados)==3 :
+        if lados[0]+lados[1]<=lados[2]:
+            esUnTriangulo = False
+        elif lados[0]+lados[2]<=lados[1]:
+            esUnTriangulo = False
+        elif lados[1]+lados[2]<=lados[0]:
+            esUnTriangulo = False
     else:
-        mensaje = "No es un triángulo"
-    
-    print(mensaje)
+        esUnTriangulo = False
+        
+    return esUnTriangulo 
 
-esTriangulo()
-
-
-
-
+print(esTriangulo([3,4,5]))
+print(esTriangulo([3,4,15]))
+print(esTriangulo([3,3,3]))
+print(esTriangulo([15,4,3]))
+print(esTriangulo([3,1,4]))
 
 
 """
@@ -50,3 +45,31 @@ esTriangulo()
     lados.append(lado3)
 """
     
+"""
+Solucion clase: más sintética
+
+
+primerLado = int(input("Introduce el primer lado:"))
+segundoLado = int(input("Introduce el primer lado:"))
+tercerLado = int(input("Introduce el primer lado:"))
+
+
+lados= [primerLado, segundoLado, tercerLado]
+
+def esTriangulo(lados):
+   return len(lados)==3 and not ((lados[0]+lados[1]<=lados[2]) or
+                            (lados[0]+lados[2]<=lados[1]) or
+                            (lados[1]+lados[2]<=lados[0]))
+
+    else:
+        esUnTriangulo = False
+        
+    return esUnTriangulo
+    
+    
+print(esTriangulo([3,4,5]))
+print(esTriangulo([3,4,15]))
+print(esTriangulo([3,3,3]))
+print(esTriangulo([15,4,3]))
+print(esTriangulo([3,1,4]))
+"""
