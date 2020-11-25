@@ -30,3 +30,4 @@ def numberInString(cadena):
 assert(numberInString("Los 4440")==4) #si son True, no devuelven nada
 assert(numberInString("Hola")==0)
 assert(numberInString("El numero 1 de la lista de los 40 Principales")==3)
+'''
