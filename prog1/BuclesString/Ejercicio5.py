@@ -24,17 +24,83 @@ print("{} {}".format(type(cadena), cadena))
 '''
 
 
-def palindrome(cadena):
+def isPalindrome(cadena):
     cadena = cadena.lower()
-    reverso=-1
+    inversa= ""
+    
     for i in range (0,len(cadena)):
-        if cadena[i] != cadena[reverso]:
-            palindrome == False
-            reverso-=1
-    return reverso        
+        reverso = cadena[i] + inversa
+        
+    return inversa == cadena        
+
+'''
+Hasta ahora hemos visto siempre cadena+=reverso, pero esto nos ordenaría la lista en orden.
+Para que almacene los valores al principio en vez de al final, le cambiamos el orden cadena[i]+reverso
+'''
+
+assert(isPalindrome("amana")==False)
+assert(isPalindrome("amolapaloma")==True)
+assert(isPalindrome("Manuel no te arrimes a la pared")==False)
+
+'''
+Otra solucion 1:
 
 
-assert(palindrome("Amar da drama")==True)
-assert(palindrome("Amigo, no gima")==True)
-assert(palindrome("A mi loca Colima")==True)
-assert(palindrome("Manuel no te arrimes a la pared")==False)
+def isPalindrome(cadena):
+    inversa= ""
+    
+    for c in cadena:
+        inversa= cadena[i]+ inversa 
+    
+    #print(inversa)
+        
+    return inversa==cadena
+    
+
+
+Otra solución 2:
+
+
+def isPalindrome(cadena):
+    
+    esPalindroma= True
+    
+    for i in range(0,len(cadena)//2):
+        if cadena[i]!=cadena[len(cadena)-1-i]:
+            esPalindroma = False
+    return esPalindroma
+    
+    
+    
+Otra solución 3:
+#la siguiente función nos valdría para enteros, cadenas y float
+
+def isPalindrome(cadena):
+
+    esPalindroma= True
+    cadena= str(cadena) #para convertir números enteros a cadena
+    
+    for i in range(0,int(len(cadena)//2)):
+        sonIguales = (cadena[i]==cadena[len(cadena)-1-i])
+        
+        if not sonIguales:
+            esPalindroma = False
+            
+    return esPalindroma    
+
+
+print(isPalindrome2(33388333), type(33388333))   
+print(isPalindrome2("33388333"), type("33388333"))
+print(isPalindrome2(3338.8333), type(3338.8333))
+
+
+numeros= "12345678"
+length= len(numeros)
+print(numeros[length-1])
+
+
+listaElementos = ["Joseba", "Rafael", "Jose Vicente", "Adela"]
+
+print(len(listaElementos))
+print(listaElementos[len(listaElementos)-1])
+'''
