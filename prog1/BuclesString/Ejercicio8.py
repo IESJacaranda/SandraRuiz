@@ -4,24 +4,6 @@ Diseñar una función que determine la cantidad de vocales diferentes, que tiene
 o frase introducida por teclado. Por ejemplo, la cadena “Abaco”, devolvería 2.
 '''
 
-'''
-def vocalesDiferentes(cadena):
-    cuentaVocales= 0
-    for i in range(0,len(cadena)):
-        if cadena == "a":
-            cuentaVocales+=1
-        
-    
-    return cuentaVocales
-
-print(vocalesDiferentes("abaco"))
-    
-#assert(vocalesDiferentes("aeiou aeiou")==5)
-#assert(vocalesDiferentes("pqrst xyz")==0)
-#assert(vocalesDiferentes("Buenos dias")==5)
-
-'''
-
 def cuentaVocales(cadenaEntrada):
     aparicionA=0
     aparicionE=0
@@ -43,6 +25,7 @@ def cuentaVocales(cadenaEntrada):
             
     return aparicionA+aparicionE+aparicionI+aparicionO+aparicionU
     
-assert(cuentaVocales("aeiou aeiou")==5)
+assert(cuentaVocales("Aeiou aeiou")==5)
+assert(cuentaVocales("aeio aeio")==4)
 assert(cuentaVocales("pqrst xyz")==0)
 assert(cuentaVocales("Buenos dias")==5)

@@ -5,15 +5,54 @@ la cadena es “shybaoxlna” y la palabra que queremos buscar es “hola”, en
 encontrará y deberá devolver True, en caso contrario deberá devolver False.
 '''
 
-def hiddenWord(cadena, cadena2):
-    resultado=True
-    for i in range (0,len(cadena)):
-        for j in range (0,len(cadena2)):
-            if cadena[i]==cadena2[j]:
-                resultado==True
+def hiddenWord(frase, palabra):
+    resultado = False
     
-    return resultado
+    iPalabra = 0
+    for iFrase in range (0,len(frase)):
+        if iPalabra<len(palabra) and frase[iFrase]==palabra[iPalabra]:
+            iPalabra+=1
+            
+    return iPalabra==len(palabra)
+
 
 assert(hiddenWord("shybaoxlna", "hola")==True)
-assert(hiddenWord("hipopotamo", "toma")==True)
+assert(hiddenWord("shybaoxlnabc", "hola")==True)
+assert(hiddenWord("hipopotamo", "tamo")==True)
 assert(hiddenWord("shybaoxlna", "pretzel")==False)
+
+'''
+Solucion 2
+
+def hiddenWord(frase, palabra):
+    resultado = False
+    
+    iPalabra = 0
+    iFrase = 0
+    
+    while iFrase < len(frase):
+        if iPalabra<len(palabra) and frase[iFrase]==palabra[iPalabra]:
+            iPalabra+=1
+        iFrase+=1
+        
+    return iPalabra==len(palabra)
+
+
+assert(hiddenWord("shybaoxlna", "hola")==True)
+assert(hiddenWord("shybaoxlnabc", "hola")==True)
+assert(hiddenWord("hipopotamo", "tamo")==True)
+assert(hiddenWord("shybaoxlna", "pretzel")==False)
+
+
+#Si pongo un:
+
+    resultado = (iPalabra==len(palabra))
+    return resultado
+
+Usando el modo debug puedo ver directamente el valor, en este caso boolean, que tiene
+la variable resultado.
+Una vez que compruebo que el algoritmo funciona correctamente, entonces modifico para
+no utilizar la variable resultado solo una vez y pongo:
+    
+    return iPalabra==len(palabra)
+'''
