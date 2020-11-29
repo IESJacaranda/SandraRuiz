@@ -26,6 +26,7 @@ print("{} {}".format(type(cadena), cadena))
 
 def isPalindrome(cadena):
     cadena = cadena.lower()
+    cadena = cadena.
     inversa= ""
     
     for i in range (0,len(cadena)):

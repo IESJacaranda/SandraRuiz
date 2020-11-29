@@ -7,3 +7,19 @@ Por ejemplo, pasándole la cadena "curso de programacion", una posible solución
 "crsdprgrmcnuoeoaaio"
 
 '''
+
+def agrupaConsonantesyVocales (frase):
+    fraseOrdConsonante = ""
+    fraseOrdVocal= ""
+    fraseMod = frase.replace(" ", "")
+    for i in range (0, len(fraseMod)):
+        if fraseMod[i]!="a" and fraseMod[i]!="e" and fraseMod[i]!="i" and fraseMod[i]!="o" and fraseMod[i]!="u":
+            fraseOrdConsonante+=fraseMod[i]
+        elif fraseMod[i]=="a" or fraseMod[i]=="e" or fraseMod[i]=="i" or fraseMod[i]=="o" or fraseMod[i]=="u":
+            fraseOrdVocal+=fraseMod[i]     
+            
+    return fraseOrdConsonante+fraseOrdVocal
+    
+  
+
+assert(agrupaConsonantesyVocales("curso de programacion")=="crsdprgrmcnuoeoaaio")
