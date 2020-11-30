@@ -7,3 +7,14 @@ Por ejemplo, si la cadena es “He estudiado mucho”, debe devolver 3
 
 '''
 
+def wordNumber(frase):
+    fraseMod=replace.frase("  ", " ")
+        res = len(frase.split()) 
+    return res
+    
+    
+    
+
+
+assert(wordNumber("He estudiado mucho")==3)
+assert(wordNumber("Es una lata levantarse temprano")==5)

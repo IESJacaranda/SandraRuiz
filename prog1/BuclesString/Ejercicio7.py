@@ -8,17 +8,17 @@ por la tercera.
 def buscarYReemplazar(frase, palabra, reemplazo):
     if len(palabra)>len(frase):
         return frase
+    
     fraseMod = ""
-    iFrase = 0
-    
-    for i in range (0, len(frase):
-        if frase[i]==palabra[i]:
-            if palabra[i] == reemplazo[i]:
-                iReemplazo+=fraseMod.replace(palabra[i], reemplazo[i])
-        iFrase+=1
-        print(fraseModificada)
-    return fraseModificada
-    
+    i=0
+    while frase[i]==palabra[i]:
+        
+        if p==palabra[i] and len(frase)==len(palabra):
+            fraseMod+=reemplazo
+        
+
+    return fraseMod
+
 
 """    
     while para recorrer la fraseEjemplo.
