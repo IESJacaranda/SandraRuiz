@@ -8,9 +8,11 @@ Por ejemplo, si la cadena es “He estudiado mucho”, debe devolver 3
 '''
 
 def wordNumber(frase):
-    fraseMod=replace.frase("  ", " ")
-        res = len(frase.split()) 
-    return res
+    count=0
+    for i in range (0, len(frase)):
+        if frase[i]==" ":
+            count+=1        
+    return count+1
     
     
     
