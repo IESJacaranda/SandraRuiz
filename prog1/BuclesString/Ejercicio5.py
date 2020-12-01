@@ -28,12 +28,10 @@ def isPalindrome(cadena):
     cadena = cadena.lower()
     inversa= ""
 
-    for i in range (0,len(cadena)):
-        if cadena[i]==" ":
-            cadena[i]==""
-        inversa = cadena[i] + inversa
-        
-    return inversa == cadena        
+    for l in cadena:
+        inversa = l + inversa
+
+    return inversa==cadena    
 
 '''
 Hasta ahora hemos visto siempre cadena+=reverso, pero esto nos ordenaría la lista en orden.
@@ -41,8 +39,7 @@ Para que almacene los valores al principio en vez de al final, le cambiamos el o
 '''
 
 assert(isPalindrome("amana")==False)
-assert(isPalindrome("amolapaloma")==True)
-assert(isPalindrome("Manuel no te arrimes a la pared")==False)
+assert(isPalindrome("Amolapaloma")==True)
 
 '''
 Otra solucion 1:

@@ -12,13 +12,11 @@ def agrupaConsonantesyVocales(frase):
     fraseOrdConsonante = ""
     fraseOrdVocal= ""
     for i in range (0, len(frase)):
-        if frase[i]==" ":
-            frase[i]==""
-        elif frase[i]!="a" and frase[i]!="e" and frase[i]!="i" and frase[i]!="o" and frase[i]!="u":
+        if frase[i]!=" " and (frase[i]!="a" and frase[i]!="e" and frase[i]!="i" and frase[i]!="o" and frase[i]!="u"):
             fraseOrdConsonante+=frase[i]
-        elif frase[i]=="a" or frase[i]=="e" or frase[i]=="i" or frase[i]=="o" or frase[i]=="u":
+        elif frase[i]!=" " and (frase[i]=="a" or frase[i]=="e" or frase[i]=="i" or frase[i]=="o" or frase[i]=="u"):
             fraseOrdVocal+=frase[i]     
-            
+                   
     return fraseOrdConsonante+fraseOrdVocal
     
   

@@ -39,4 +39,4 @@ fraseEjemplo = "La lluvia en Sevilla es una maravilla, porque en Sevilla hace mu
 assert(buscarYReemplazar(fraseEjemplo, "Sevilla", "Córdoba")=="La lluvia en Córdoba es una maravilla, porque en Córdoba hace mucho calor")
 
 
-
+print(buscarYReemplazar(fraseEjemplo, "Sevilla", "Guadalajara"))
