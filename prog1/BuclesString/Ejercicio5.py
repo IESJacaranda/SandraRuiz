@@ -26,11 +26,12 @@ print("{} {}".format(type(cadena), cadena))
 
 def isPalindrome(cadena):
     cadena = cadena.lower()
-    cadena = cadena.
     inversa= ""
-    
+
     for i in range (0,len(cadena)):
-        reverso = cadena[i] + inversa
+        if cadena[i]==" ":
+            cadena[i]==""
+        inversa = cadena[i] + inversa
         
     return inversa == cadena        
 
