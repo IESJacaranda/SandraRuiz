@@ -18,3 +18,27 @@ def wordNumber(frase):
 
 assert(wordNumber("He estudiado mucho")==3)
 assert(wordNumber("Es una lata levantarse temprano")==5)
+
+
+
+'''
+Solución clase:
+
+
+def wordNumber(frase):
+
+    temporal= " "
+    count=1
+    for i in frase:
+        if temporal==" ":
+            if i != " ":
+                count+=1        
+        temporal = i
+
+    return count
+
+    
+assert(wordNumber("He estudiado mucho")==3)
+assert(wordNumber("Es una lata levantarse temprano")==5)
+
+'''    
