@@ -9,31 +9,30 @@ def buscarYReemplazar(frase, palabra, reemplazo):
     if len(palabra)>len(frase):
         return frase
     
-    fraseMod = ""
-    i=0
-    while frase[i]==palabra[i]:
+    cadenaFinal = ""
+    indicadorPosicionFrase = 0
+    
+    while indicadorPosicionFrase < len(frase): #itera sobre frase 
+        coincidencia = True
+        indicadorPalabra= 0
+        while coincidencia and indicadorPalabra < len(palabra): #Búsqueda
+            if not palabra[indicadorPalabra]==frase[indicadorPosicionFrase+indicadorPalabra]:
+                coincidencia = False
+            indicadorPalabra+=1
         
-        if p==palabra[i] and len(frase)==len(palabra):
-            fraseMod+=reemplazo
-        
+        #Concatenacion o reemplazo
+        if not coincidencia: #concatenación
+            cadenaFinal+=frase[indicadorPosicionFrase] #añade a cadena Final sin modificar la variable frase    
+            indicadorPosicionFrase+=1
+        else: # si hay coincidencia salta aquí: Reemplazo
+            for i in reemplazo:
+                cadenaFinal+=i
+            indicadorPosicionFrase+=len(palabra)
 
-    return fraseMod
+    return cadenaFinal
 
 
-"""    
-    while para recorrer la fraseEjemplo.
-    En cuanto tenga un match entre primer elemento palabra y primer elemento de frase, voy a comprobar los demas elementos.
-    si coinciden utilizo la sustitucion. Para eso uso variable auxiliar que es el mensaje de salida.
-    Si veo que no coincide 
-        
-        utilizaría mas de while
-        print()
 
-            
-           
-    return "" 
-"""
+fraseEjemplo = "La lluvia en Sevilla es una maravilla, porque en Sevilla hace mucho calor"
 
-frase = "La lluvia en Sevilla es una maravilla, porque en Sevilla hace mucho calor"
-
-assert(buscarYReemplazar(frase, "Sevilla", "Córdoba")=="La lluvia en Córdoba es una maravilla, porque en Córdoba hace mucho calor")
+assert(buscarYReemplazar(fraseEjemplo, "Sevilla", "Córdoba")=="La lluvia en Córdoba es una maravilla, porque en Córdoba hace mucho calor")
