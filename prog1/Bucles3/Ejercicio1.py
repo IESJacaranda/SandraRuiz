@@ -84,7 +84,7 @@ def esUnPoligono(lado):;
     for i in range (0,len(lado)):
         if lado[i]>ladoMayor:
             ladoMayor = lado[i]
-        sumaTotal Lados+=lado[i]
+        sumaTotalLados+=lado[i]
     
     
     return ladoMayor < (sumaTotalLados-ladoMayor)
