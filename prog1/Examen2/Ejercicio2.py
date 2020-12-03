@@ -91,3 +91,46 @@ def dniVerificacion(dni,letra):
 assert(dniVerificacion(75410143,"C")==True)
 assert(dniVerificacion(15409981,"G")==True)
 assert(dniVerificacion(15410000,"H")==False)
+
+
+
+"""
+Corrección:
+
+
+
+letras= "TRWAGMYFPDXBNJZSQYHLCKE"
+
+def calcularLetra(numeroDNI):
+    return letras[numeroDNI % 23]
+
+
+def separarNumeroDNI(dniConLetra):
+    numeroTmp = ""
+    for i in range(len(dniConLetra)-1):
+        numeroTmp+=dniConLetra[i]
+    return int(numeroTmp)
+
+    
+def esDniValido(dniConLetra):
+    numeroDNI = separarNumeroDNI(dniConLetra)
+    resultado = False
+    if dniConLetra[-1]==calcularLetra(numeroDNI):
+        resultado=True
+    
+    return resultado
+
+    
+dniValido7Cifras = "7777777M"
+dniValido8Cifras = "14141414W"
+
+#sirve para acceder a la última posición del string, es decir, la letra.
+#print(dniValido7Cifras[len(dniValido7Cifras)-1])
+#print(dniValido8Cifras[len(dniValido8Cifras)-1])
+
+
+assert(not esDNIvalido("190904A"))
+assert(esDNIvalido(dniValido8Cifras))
+assert(esDNIvalido(dniValido7Cifras))
+
+"""
