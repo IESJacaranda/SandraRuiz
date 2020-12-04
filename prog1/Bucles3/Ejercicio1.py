@@ -10,36 +10,8 @@ Se debe garantizar que los datos son correctos.
 """
 #perímetro = suma lados
 
-def calculaPerimetro(listaLados):
-    perimetro=0
-    for i in range(listaLados):
-        longLado=(int(input("Cuanto mide el lado? ")))
-        while longLado<=0:
-            longLado=(int(input("No es correcto. Cuanto mide el lado? ")))
-        perimetro+=longLado
-    
-    return perimetro
 
-def compruebaFigura(listaLados):
-    while numLado<3: 
-        list.append(numLado)
-        
-def pideLados():
-    listaLados= []
-
-    
-    
-    print("El perímetro es %s" % (calculaPerimetro(listaLados)))
-
-
-numLado=(int(input("Cuantos lados tiene la figura? ")))
-            
-pideLados()
-
-'''
-solución clase
-
-def esUnPoligono(lado):;
+def esUnPoligono(lado):
     esPoligono = True
     
     for i in range(0,len(lado)):   #validacion de si lados son positivos
@@ -67,8 +39,9 @@ print(esUnPoligono([10, 10, 10, 10]))
 
 
 
+"""
 
-otra solución: esta es más óptima
+Otra solución: esta es más óptima
 
 
 def esUnPoligono(lado):;
@@ -95,4 +68,4 @@ print(esUnPoligono([0, 1, 3, 5]))
 print(esUnPoligono([1, -1, 3]))
 print(esUnPoligono([10, 10, 10, 10]))
 
-'''
+"""
