@@ -11,11 +11,24 @@ Se debe garantizar que los datos son correctos.
 #perímetro = suma lados
 
 
+def perimetro(lado):
+    perimetro=0
+
+    for i in range(0, len(lado)):
+        perimetro+=lado[i]
+
+    return perimetro
+
+assert(perimetro([5,1,3,5])==14)
+assert(perimetro([1,4,3])==8)
+assert(perimetro([10,10,10,10,10])==50)
+
+
 def esUnPoligono(lado):
     esPoligono = True
     
     for i in range(0,len(lado)):   #validacion de si lados son positivos
-        if(lado[i]>=0):
+        if(lado[i]<=0):
             esPoligono = False
  
  
@@ -32,10 +45,9 @@ def esUnPoligono(lado):
     
     
     
-
-print(esUnPoligono([0, 1, 3, 5]))
-print(esUnPoligono([1, -1, 3]))
-print(esUnPoligono([10, 10, 10, 10]))
+assert(esUnPoligono([0,1,3,5])==False)
+assert(esUnPoligono([1,-1,3])==False)
+assert(esUnPoligono([10,10,10,10,10])==True)
 
 
 
