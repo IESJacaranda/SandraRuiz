@@ -13,4 +13,33 @@ primeros caracteres del nombre, los tres últimos del primer apellido , los tres
 primeros del segundo apellido y los tres primeros números del dni.
 """
 
-def idUsuario(cadena):
+def nombreApellidos(cadena):
+    return 
+
+
+
+nombre=int(input("Dime tu nombre: "))
+apellidos=int(input("Dime tus apellidos"))
+
+def calcularLetra(numeroDNI):
+    return letras[numeroDNI % 23]
+
+
+def separarNumeroDNI(dniConLetra):
+    numeroTmp = ""
+    for i in range(len(dniConLetra)-1):
+        numeroTmp+=dniConLetra[i]
+    return int(numeroTmp)
+
+    
+def esDniValido(dniConLetra):
+    numeroDNI = separarNumeroDNI(dniConLetra)
+    resultado = False
+    if dniConLetra[-1]==calcularLetra(numeroDNI):
+        resultado=True
+    
+    return resultado
+
+letras= "TRWAGMYFPDXBNJZSQYHLCKE"    
+dniValido7Cifras = "7777777M"
+dniValido8Cifras = "14141414W"
