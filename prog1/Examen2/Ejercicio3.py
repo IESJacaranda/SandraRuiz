@@ -14,21 +14,19 @@ primeros caracteres del nombre, los tres últimos del primer apellido, los tres
 primeros del segundo apellido y los tres primeros números del dni.
 """
 
-def nombreApellidos(cadena):
-    nombreApellidos=nombreApellidos.lower()
+def nombreApellidos(nombre):
+    nombre=nombre.lower()
     id=""
-    for i in range (0,len(nombreApellidos)):
-        id=nombreApellidos[0]+nombreApellidos[1]+nombreApellidos[2]
-        print(id)
-        if nombreApellidos[i]==",":
-            indicadorNombre=
-    dkeige
+    for i in range (0, 3):
+        id+=nombre[i]
+    
 
 
 
-nombreApellidos=int(input("Introduce tu nombre y apellidos separados por coma: "))
 
-nombreApellidos(cadena)
+nombre=input("Introduce tu nombre y apellidos separados por coma: ")
+
+nombreApellidos(nombre)
 
 """
 def calcularLetra(numeroDNI):
@@ -53,3 +51,5 @@ def esDniValido(dniConLetra):
 letras= "TRWAGMYFPDXBNJZSQYHLCKE"    
 dniValido7Cifras = "7777777M"
 dniValido8Cifras = "14141414W"
+
+"""
