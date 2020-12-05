@@ -22,7 +22,7 @@ def nombreApellidos(cadena):
         print(id)
         if nombreApellidos[i]==",":
             indicadorNombre=
-    
+    dkeige
 
 
 
