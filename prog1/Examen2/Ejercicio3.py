@@ -10,23 +10,27 @@ Luego debe preguntar el dni, debe comprobar que se trata de un dni válido, si n
 a preguntarlo hasta que nos dé un dni válido. 
 Por último debe llamar a una función que devuelva el id. 
 Para calcular el id le pasaremos la cadena con el nombre y apellidos y creará el id con los tres 
-primeros caracteres del nombre, los tres últimos del primer apellido , los tres 
+primeros caracteres del nombre, los tres últimos del primer apellido, los tres 
 primeros del segundo apellido y los tres primeros números del dni.
 """
 
 def nombreApellidos(cadena):
     nombreApellidos=nombreApellidos.lower()
-    
+    id=""
     for i in range (0,len(nombreApellidos)):
+        id=nombreApellidos[0]+nombreApellidos[1]+nombreApellidos[2]
+        print(id)
         if nombreApellidos[i]==",":
-            indicadorNombre==
-    return 
+            indicadorNombre=
+    
 
 
 
 nombreApellidos=int(input("Introduce tu nombre y apellidos separados por coma: "))
 
+nombreApellidos(cadena)
 
+"""
 def calcularLetra(numeroDNI):
     return letras[numeroDNI % 23]
 
