@@ -6,6 +6,25 @@ multiple of 100 and not multiple of 400.
 
 """
 
-def leapYear():
+def leapYear(year):
+    mensaje = ""
+
+    if year % 4 == 0 and (year % 100 != 0 or year % 400 == 0):
+        mensaje="Es bisiesto"
+    else:
+        mensaje=-1
     
-    return result
+    print(mensaje)    
+    
+    #return mensaje
+
+
+year=int(input("Dime un año: "))
+while year<=0:
+    year=int(input("Error. Dime un año"))
+        
+#assert(leapYear(2000)=="Es bisiesto")
+#assert(leapYear(2100)==-1)
+#assert(leapYear(1992)=="Es bisiesto")
+
+leapYear(year)
