@@ -13,10 +13,24 @@ en principio como el producto de todos los números enteros positivos desde 1
 
 """
 
-numero=int(input("Dame un entero positivo "))
-while numero<0:
-    numero=int(input("Error. Dame un entero positivo: "))
 
-def factorialNumero(numeros):
-    for i in range (numeros):
+def factorialNumero(numero):
+    resultado=1
+    if numero>0:
+        for i in range (1,numero+1):
+            resultado*=i
+    elif numero<0:
+        resultado=-1    
+    return resultado
         
+
+        
+#numero=int(input("Dame un numero entero: "))
+
+    
+#print(factorialNumero(numero))
+
+
+assert(factorialNumero(3)==6)
+assert(factorialNumero(5)==120)
+assert(factorialNumero(4)==24)
