@@ -5,3 +5,7 @@ In other case, the method returns -1. A year is a leap year if it is multiple of
 multiple of 100 and not multiple of 400.
 
 """
+
+def leapYear():
+    
+    return result

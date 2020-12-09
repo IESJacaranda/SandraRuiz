@@ -1,7 +1,8 @@
 """
 Ejercicio 4
 Design a method called dayOfWeek that receives three integer parameters: day, month and year. The method should 
-return a number between 0 and 6 that is the day in the week for that date. You have to know the next algorithm:
+return a number between 0 and 6 that is the day in the week for that date. 
+You have to know the next algorithm:
        
        a = (14 - month) / 12 
        y = year – a 
@@ -10,3 +11,7 @@ return a number between 0 and 6 that is the day in the week for that date. You h
        
        If the variable d is zero was Sunday, 1 Monday……………... 6 Saturday. 
 """
+
+def dayOfWeek(day,month,year):
+    
+    return
