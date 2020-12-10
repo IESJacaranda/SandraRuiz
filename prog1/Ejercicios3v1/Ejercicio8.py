@@ -4,3 +4,10 @@ Design a method called secondOrder that receives three integer positive number a
 the coefficients of the an equation of a second order (ax2+bx+c=0) and the method returns the numbers of the 
 solutions. If the parameters are not valid the method should return -1
 """
+
+def secondOrder(a,b,c):
+    x=-1
+    
+    return x
+
+assert(secondOrder())

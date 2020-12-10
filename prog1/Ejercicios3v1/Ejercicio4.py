@@ -13,11 +13,15 @@ You have to know the next algorithm:
 """
 
 def dayOfWeek(day,month,year):
-    a = (14 - month) / 12
-    y = year - a
-    m = month + 12 * a - 2
-    d = (day + y + y/4 - y/100 + y/400 + (31*m)/12) % 7
+    
+    a = (14-month)/12
+    y = year-a
+    m = month+12*a-2
+    d = (day + y + (y/4) - (y/100) + (y/400) + (31*m)/12) % 7
+    d=round(d,0)
+    
     result=""
+
     if d==0:
         result="Sunday"
     elif d==1:
@@ -30,15 +34,16 @@ def dayOfWeek(day,month,year):
         result="Thursday"
     elif d==5:
         result="Friday" 
-    else:
+    elif d==6:
         result="Saturday"   
             
     return result
 
 
-assert(dayOfWeek(5,2,2014)==3)
-assert(dayOfWeek(19,12,2020)==4)
-assert(dayOfWeek(30,1,2020)==6)
-assert(dayOfWeek(30,3,2020)==2)
-assert(dayOfWeek(12,7,2021)==1)
-assert(dayOfWeek(23,8,2020)==0)
+
+assert(dayOfWeek(5,2,2014)=="Wednesday")
+assert(dayOfWeek(19,12,2020)=="Saturday")
+assert(dayOfWeek(30,1,2020)=="Thursday")
+assert(dayOfWeek(30,3,2020)=="Monday")
+assert(dayOfWeek(16,7,2021)=="Friday")
+assert(dayOfWeek(23,8,2020)=="Sunday")
