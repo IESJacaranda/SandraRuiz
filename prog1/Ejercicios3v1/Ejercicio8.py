@@ -5,19 +5,46 @@ This parameters are the coefficients of a second order equation (ax2+bx+c=0) and
 should return the solutions to this equation. If the parameters are not valid the method 
 should return -1
 """
-from math import sqrt #importar la funcion de la raiz cuadrada
+
+import math
 
 def secondOrder(a,b,c):
-    resultado=-1
-    if a!=0:
-        x1 = (-b + sqrt(b**2-(4*a*c)) ) / (2*a)
-        x2 = (-b - sqrt(b**2-(4*a*c)) ) / (2*a)
+    soluciones = []
+    
+    radical = b**2 - 4*a*c
+    
+    if radical >=0 and a>0: #de esta manera evitamos las soluciones con numeros complejos
+        x1 = -b + math.sqrt(radical) / 2*a
+        x1 = -b - math.sqrt(radical) / 2*a
         
-        resultado = x1, x2
+        if radical==0:
+            soluciones.append(sol1)
+        else:
+            soluciones.append(sol1)
+            soluciones.append(sol2)
+
             
-    return resultado
+    return soluciones
 
-
-assert(secondOrder(-1,7,-10)==2, 5)
-assert(secondOrder(0,7,-10)==-1)
+#casos de prueba no sirven
+assert(secondOrder(-1,7,-10)==[2,5])
+assert(secondOrder(0,7,-10)==[-1])
 assert(secondOrder(1,-2,1)==1/2, 1/3)
+
+
+'''
+Solución anterior simplificada:
+
+def secondOrder(a,b,c):
+    soluciones = []
+    
+    radical = b**2 - 4*a*c
+    
+    if radical==0:
+        soluciones.append(-b + math.sqrt(radical) / 2*a)
+    else:
+        soluciones.append(-b + math.sqrt(radical) / 2*a)
+        soluciones.append(-b - math.sqrt(radical) / 2*a)
+
+            
+    return soluciones

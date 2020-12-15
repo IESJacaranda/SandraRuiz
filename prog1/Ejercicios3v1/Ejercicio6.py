@@ -25,7 +25,9 @@ assert(numberOfNumbers(1000)==4)
 assert(numberOfNumbers(59393038)==8)
 
 """
-
+'''
+Esta función recibe un entero positivo y calcula sus dígitos.
+'''
 def numberOfNumbers(number):
     count=-1
     
@@ -39,7 +41,6 @@ def numberOfNumbers(number):
 
 
 assert(numberOfNumbers(-1)==-1)
-assert(numberOfNumbers(-30)==-1)
 assert(numberOfNumbers(0)==-1)
 assert(numberOfNumbers(9)==1)
 assert(numberOfNumbers(10)==2)
