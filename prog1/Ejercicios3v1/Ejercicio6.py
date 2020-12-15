@@ -27,14 +27,15 @@ assert(numberOfNumbers(59393038)==8)
 """
 
 def numberOfNumbers(number):
-    digitsNumber=-1
-    if number>0 and number<10:
-        digitsNumber=1
-    elif number>=10:
-        digitsNumber=number//10
-       
-    return digitsNumber
-
+    count=-1
+    
+    if number>0:
+        count=1
+        while number>=10:
+            count+=1
+            number=number//10
+    
+    return count
 
 assert(numberOfNumbers(-1)==-1)
 assert(numberOfNumbers(-30)==-1)
