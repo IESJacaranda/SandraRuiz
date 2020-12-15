@@ -29,7 +29,7 @@ def secondOrder(a,b,c):
 #casos de prueba no sirven
 assert(secondOrder(1,-5,6)==[3.0,2.0])
 assert(secondOrder(1,-2,1)==[1])
-assert(secondOrder(1,1,1)==None)
+assert(secondOrder(1,1,1)==[])
 
 
 '''
