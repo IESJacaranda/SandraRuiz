@@ -20,6 +20,7 @@ def isPrime(number):
     
     return result
 
+
 assert(isPrime(-5)==None)
 assert(isPrime(0)==None)
 assert(isPrime(1)==False)

@@ -29,6 +29,7 @@ def numberDivisors(number):
         divisors=-1       
     return divisors
 
+
 assert(numberDivisors(15)==[1,3,5,15])
 assert(numberDivisors(-1)==-1)
 assert(numberDivisors(45)==[1,3,5,9,15,45])

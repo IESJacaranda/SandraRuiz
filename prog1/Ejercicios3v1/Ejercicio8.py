@@ -17,6 +17,7 @@ def secondOrder(a,b,c):
             
     return resultado
 
+
 assert(secondOrder(-1,7,-10)==2, 5)
 assert(secondOrder(0,7,-10)==-1)
 assert(secondOrder(1,-2,1)==1/2, 1/3)

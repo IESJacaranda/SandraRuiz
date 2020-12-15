@@ -37,6 +37,7 @@ def numberOfNumbers(number):
     
     return count
 
+
 assert(numberOfNumbers(-1)==-1)
 assert(numberOfNumbers(-30)==-1)
 assert(numberOfNumbers(0)==-1)

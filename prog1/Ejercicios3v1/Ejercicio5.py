@@ -17,6 +17,7 @@ def myPower(base,exponente):
     return potencia
 
 
+
 assert(myPower(5,2)==25)
 assert(myPower(6,7)==279936)
 assert(myPower(8000,0)==1)
