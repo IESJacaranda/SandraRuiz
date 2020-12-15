@@ -5,6 +5,10 @@ as parameter. The method should return True if the number is prime or False if n
 If the parameter is not valid the method will no return anything.
 """
 
+'''
+Esta función calcula si un número es primo. Devuelve cierto si lo es, 
+falso si no lo es y nada si el valor es incorrecto.
+'''
 def isPrime(number):
     if number>0:
         divisor=0

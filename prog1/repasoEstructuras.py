@@ -218,3 +218,9 @@ Las variables que hemos visto:
 - Los string
 - Tb las funciones las entiende Python como una variable con más argumentos.
 '''
+
+'''
+TESTS:
+Una función que interactúa con el usuario (le pide datos), no hay que hacerle
+tests.
+'''
