@@ -1,5 +1,7 @@
 '''
-    1. Crea un programa que genere 1OO números de forma aleatoria y que posteriormente 
+Ejercicio 1:
+
+Crea un programa que genere 1OO números de forma aleatoria y que posteriormente 
     ofrezca al usuario la posibilidad de:
         1. Conocer el mayor de los números
         2. Conocer el menor de los números
