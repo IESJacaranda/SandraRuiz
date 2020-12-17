@@ -6,21 +6,24 @@ Muestra el máximo de los números guardado en la lista, muestra los números pa
 '''
 
 
-numero=int(input("Dime un número (negativo para parar): "))
 
-def creaLista(numero):
-    lista=[]
-    while numero>0:
-        lista.append(numero)
     
-    return lista
+
+
+def creaLista(listaNumeros, numero):
+    if numero>=0:
+        listaNumeros.append(numero)
+    return listaNumeros
+
 
 def numMayor(lista):
-    mayor=lista[0]
-    for i in lista:
-        if mayor < i:
-            mayor=i
-        
+    mayor=0
+    if len(lista)>0:
+        mayor = lista[0]
+        for i in lista:
+            if i > mayor:
+                mayor = i
+
     return mayor
 
 
@@ -33,9 +36,12 @@ def numPares(lista):
     return listaPar
 
 def main():
-    
-    creaLista(numero)
-    print("El número mayor de la lista es %s" % numMayor(creaLista(numero)))
-    print("Los números pares de la lista son: %s" % numPares(creaLista(numero)))
+    numero=0
+    listaNumeros=[]
+    while numero>=0:
+        numero=int(input("Dime un número (negativo para parar): "))
+        lista = creaLista(listaNumeros, numero)
+    print("El número mayor de la lista es %s" % numMayor(creaLista(listaNumeros, numero)))
+    print("Los números pares de la lista son: %s" % numPares(creaLista(listaNumeros, numero)))
           
 main()

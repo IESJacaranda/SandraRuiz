@@ -75,8 +75,6 @@ assert(calculaAciertos([1,2,3,4,5,6], [2,23,5,15,40])==1)
 assert(calculaAciertos([1,2,3,4,5,6], [1,2,3,4,5,6])==6)
 
 
-
-
 combinacionGanadora = [1,3,29,45,6,49]
 
 def compruebaApuesta(ganadora):
