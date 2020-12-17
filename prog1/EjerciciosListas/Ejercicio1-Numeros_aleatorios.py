@@ -32,30 +32,36 @@ def generarNumerosAleatorios():
         aleatorios.append(numeroAleatorio)
         if numeroAleatorio not in aleatorios:
             aleatorios.append(numeroAleatorio)
-        
-    print(aleatorios)
     
     return aleatorios
 
 #Esta función calcula el número mayor de una lista de números. Recibe una lista y devuelve el número mayor.
 def numeroMayor(lista):
-    mayor = lista[0]
-    for i in lista:
-        if i > mayor:
-            mayor = i
+    mayor = -1
+    if len(lista)>0:
+        mayor = lista[0]
+        for i in lista:
+            if i > mayor:
+                mayor = i
 
     return mayor
 
+assert(numeroMayor([])==-1)
+assert(numeroMayor([3,5,7])==7)
 
 #Esta función calcula el número menor de una lista de números. Recibe una lista de números y devuelve el número menor.
 def numeroMenor(lista):
-    menor = lista[0]
-    for i in lista:
-        if i < menor:
-            menor = i
+    menor = -1
+    if len(lista)>0:
+        menor = lista[0]
+        for i in lista:
+            if i < menor:
+                menor = i
 
     return menor
 
+assert(numeroMenor([])==-1)
+assert(numeroMenor([3,5,7])==3)
 
 #Esta función calcula la suma de una lista de números. Recibe una lista de números y devuelve la suma de ellos.
 def sumNumeros(lista):
@@ -65,27 +71,33 @@ def sumNumeros(lista):
         
     return sumaNumeros
 
+assert(sumNumeros([3,5,7])==15)
+assert(sumNumeros([])==0)
 
 #Esta función calcula la media de los números de una lista, haciendo uso de una función que los suma.
 def mediaNumeros(lista):
-    return sumNumeros(lista)/len(lista)
+    media=0
+    if len(lista)>0:
+        media=round(sumNumeros(lista)/len(lista),2)
+    
+    return media
 
+
+assert(mediaNumeros([3,5,7])==5)
+assert(mediaNumeros([])==0)
+assert(mediaNumeros([4,1,1,1])==1.75)
 
 '''Esta función recibe una lista y comprueba si un elemento que se introduce por consola está contenido en la misma 
 y de ser así lo sustituye. De no ser así devuelve un mensaje
 '''
-def sustituirNumero(lista):
-    numero=int(input("Dime un número: "))
-    if numero not in lista:
-        resultado="El número no está en la lista."
-    else:
-        sustituto=int(input("Por que numero quieres sustituirlo?"))
-        for i in range(len(lista)):
-            if lista[i]==numero:
-                lista[i]=sustituto
-        resultado="La lista nueva es %s" % lista
+def sustituirNumero(lista, buscado, sustituto):
+    for i in range(len(lista)):
+        if buscado==lista[i]:
+            lista[i]=sustituto
     
-    return resultado
+    return lista
+
+assert(sustituirNumero([2,2,2], 2, 3)[2]==3)
 
 
 def mostrarMenu():
@@ -96,32 +108,37 @@ def mostrarMenu():
     mensaje+= "4. Obtener la media de los números.\n"
     mensaje+= "5. Sustituir el valor de un elemento por otro número introducido por teclado. \n"
     mensaje+= "6. Mostrar todos los números.\n"
-
+    mensaje+= "Qué opción eliges? \n"
+    
     return mensaje
 
 
 def main():
-
-    print(mostrarMenu())
     
-    opcion=int(input("Qué opción eliges? "))
+    print(mostrarMenu())
+        
+    opcion=int(input(mostrarMenu()))
     while opcion<1 or opcion>6:
-        opcion=int(input("Qué opción eliges? "))
+        opcion=int(input(mostrarMenu()))
         
     mensajeFinal=""
     if opcion==1:
-        mensajeFinal = "El numero mayor es el %s" % numeroMayor(generarNumerosAleatorios())
+        print("El numero mayor es el %s" % numeroMayor(generarNumerosAleatorios()))
     elif opcion==2:
-        mensajeFinal = "El numero menor es el %s" % numeroMenor(generarNumerosAleatorios())
+        print("El numero menor es el %s" % numeroMenor(generarNumerosAleatorios()))
     elif opcion==3:
-        mensajeFinal = "La suma de los números es %s" % sumNumeros(generarNumerosAleatorios())
+        print("La suma de los números es %s" % sumNumeros(generarNumerosAleatorios()))
     elif opcion==4:
-        mensajeFinal = "La media de los números es %s" % mediaNumeros(generarNumerosAleatorios())
+        print("La media de los números es %s" % mediaNumeros(generarNumerosAleatorios()))
     elif opcion==5:
-        mensajeFinal = "%s" % sustituirNumero(generarNumerosAleatorios())
+        buscado=int(input("Dime el número a sustituir: "))
+        sustituto=int(input("Por que numero quieres sustituirlo?"))
+        if buscado in sustituirNumero(generarNumerosAleatorios(), buscado, sustituto):
+            print(sustituirNumero(generarNumerosAleatorios(),buscado,sustituto))
+        else: #opcional, no lo pide el programa.
+            print("El número no está en la lista.")
     elif opcion==6:
-        mensajeFinal = "Los números de la lista son: %s" % generarNumerosAleatorios()
+        print("Los números de la lista son: %s" % generarNumerosAleatorios())
         
-    return mensajeFinal
 
-print(main())
+main()
