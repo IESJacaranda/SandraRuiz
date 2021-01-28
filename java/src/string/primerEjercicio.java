@@ -20,6 +20,11 @@ public class primerEjercicio {
 		System.out.println("Introduce el caracter a reemplazar");
 		cReemplazar = teclado.nextLine().charAt(0);
 		
+		
+		int num = charactersInString("Inmaculada Oalias", 'a');
+		System.out.println(num);
+		
+		
 		cadena = cadena.replace(cBuscado,  cReemplazar);
 		if (Character.isUpperCase(cBuscado)) {
 			cadena = cadena.replace(Character.toLowerCase(cBuscado),  cReemplazar);
@@ -43,13 +48,6 @@ public class primerEjercicio {
 		
 	}
 	
-	public static void main(String2[] args) {
-		//TODO Auto-generated method stub
-	
-			int num = charactersInString("Inmaculada Oalias", 'a');
-			System.out.println(num);
-	
-	}
 
 	public static int charactersInString(String cad, char letra) {
 		
