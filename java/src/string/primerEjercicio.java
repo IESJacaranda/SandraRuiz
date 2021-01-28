@@ -43,7 +43,7 @@ public class primerEjercicio {
 		
 	}
 	
-	public static void main(String[] args) {
+	public static void main(String2[] args) {
 		//TODO Auto-generated method stub
 	
 			int num = charactersInString("Inmaculada Oalias", 'a');
