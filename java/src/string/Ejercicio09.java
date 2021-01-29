@@ -1,6 +1,6 @@
 package string;
 
-public class Ejercicio9 {
+public class Ejercicio09 {
 
 	public final static String VOCALES = "aeiou";
 	

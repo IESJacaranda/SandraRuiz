@@ -2,7 +2,7 @@ package string;
 
 import java.util.Scanner;
 
-public class primerEjercicio {
+public class Ejercicio01 {
 
 	static Scanner teclado = new Scanner(System.in);
 	
@@ -62,7 +62,3 @@ public class primerEjercicio {
 		return contador;
 	}
 }
-
-
-
-
