@@ -5,16 +5,19 @@ public class Ejercicio10 {
 	public static void main(String[] args) {
 		
 		System.out.println(contarPalabras("no me gustan los lichis"));
+		System.out.println(contarPalabras("  no me gustan los lichis"));
 		System.out.println(contarPalabras("arrrrgggg no me gustan los lichis"));
 		System.out.println(contarPalabras("   arrrrgggg         no me   gustan los      lichis "));
-		System.out.println(contarPalabras("  no me gustan los lichis"));
 		System.out.println(contarPalabras("arrrrgggg no me gustan los lichis   "));
 		System.out.println(contarPalabras("   arrrrgggg         no me   gustan los      lichis "));
 		
 	}
 	
 	
-	//Este método recibe un String y devuelve el número de palabras que contiene
+	/**
+	 * Este método recibe un String
+	 * Devuelve el número de palabras que contiene
+	*/
 	public static int contarPalabras(String cadena) {
 		int contadorPalabras=0;
 		cadena=" " + cadena;
