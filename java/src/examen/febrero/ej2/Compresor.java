@@ -38,7 +38,7 @@ public class Compresor {
 		return sb.toString();
 	}
 	
-	
+	/*
 	public String desencriptar(String cadena) {
 		
 		StringBuilder resultado = new StringBuilder();
@@ -49,22 +49,21 @@ public class Compresor {
 			String veces = "";
 			
 			for(int i=1; i<cadena.length();i++) {
-				
 				if(Character.isDigit(cadena.charAt(i))) {
 					veces+=cadena.charAt(i);
 				}else {
-					resultado.append(caracterARepetir, veces));
+					resultado.append(repetir(caracterARepetir, veces));
 					veces = "";
 					caracterARepetir=cadena.charAt(i);
 				}
 			}
-			resultado 
+			resultado.append(repetir(caracterARepetir, veces));
 		}
 		
 		return resultado.toString();
 	}
 	
-	
+	*/
 	private String repetir(char caracter, String veces) {
 		StringBuilder sb = new StringBuilder();
 		int vecesNum = Integer.parseInt(veces);
@@ -72,5 +71,26 @@ public class Compresor {
 			sb.append(caracter);
 		}
 		return sb.toString();
+	}
+	
+	
+	
+	public String desencriptarNoMasDe9(String cadena) {
+		
+		StringBuilder resultado = new StringBuilder();
+		
+		if(cadena!=null && !cadena.isEmpty() && cadena.length()>=2) {
+			
+						
+			for(int i=1; i<cadena.length()-1; i+=2) {
+				char caracterARepetir = cadena.charAt(i);
+				int repeticiones = Integer.parseInt(String.valueOf(cadena.charAt(i+1)));
+				for(int j=0; j<repeticiones; j++) {
+					resultado.append(caracterARepetir);
+				}	
+			}
+		}
+		
+		return resultado.toString();
 	}
 }
