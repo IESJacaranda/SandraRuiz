@@ -1,4 +1,4 @@
-package POO1;
+package poo1;
 
 public class Rectangulo {
 
