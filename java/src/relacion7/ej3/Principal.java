@@ -13,7 +13,7 @@ public class Principal {
 	}
 		
 	public static void mostrarMenu() {
-		System.out.println("\n Escoja una opción: "
+		System.out.println("Escoja una opción: "
 							+ "\n 1.Llenar jarra"
 							+ "\n 2.Vaciar jarra"
 							+ "\n 3.Volcar jarra A en B"

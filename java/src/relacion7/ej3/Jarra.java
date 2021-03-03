@@ -14,12 +14,11 @@ public class Jarra {
 	}
 
 	public void llenarJarra() throws Exception {
-		if(this.cantidadAgua<this.capacidad
-				|| this.capacidad==0) {
+		if(this.cantidadAgua<this.capacidad) {
+			this.totalAguaConsumida+=this.capacidad-this.cantidadAgua;
 			this.cantidadAgua = this.capacidad;
-			System.out.println("La jarra se ha llenado correctamente");
 		}else {
-			throw new Exception("La jarra no se puede llenar");
+			throw new JarraLlenaException();
 		}
 	}
 	
@@ -27,22 +26,20 @@ public class Jarra {
 		if(this.cantidadAgua==this.capacidad || this.capacidad>0) {
 			this.totalAguaConsumida=this.cantidadAgua;
 			this.cantidadAgua = 0.0;
-			System.out.println("La jarra se ha vaciado correctamente");
 		}else {
-			throw new Exception("La jarra no se puede vaciar");
+			throw new JarraVaciaException();
 		}
 		
 	}
 	
 	public void volcarJarra(Jarra jarra) throws Exception {
-		if(jarra.getCantidadAgua()<jarra.getCapacidad() && this.cantidadAgua!=0) {			
+		if(jarra.getCantidadAgua()<jarra.getCapacidad() && this.cantidadAgua<0) {			
 			while(jarra.getCantidadAgua()<jarra.getCapacidad() && this.cantidadAgua>0) {
 				this.cantidadAgua-=1;
 				jarra.setCantidadAgua(jarra.getCantidadAgua()+1);
 			}
-			System.out.println("La jarra se ha volcado correctamente.");
 		}else{
-			throw new Exception("No se puede volcar la cantidad de la jarra.");
+			throw new VolcarJarraException();
 		}
 			
 	}
