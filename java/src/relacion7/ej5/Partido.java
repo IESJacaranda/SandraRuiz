@@ -4,9 +4,12 @@ import java.util.Objects;
 
 public class Partido {
 	
-	private int golesLocal = 0;
-	private int golesVisitante = 0;
+	private int golesLocal;
+	private int golesVisitante;
 	private int jornada;
+	private Equipo local;
+	private Equipo visitante;
+	private char quiniela;
 
 	
 	
@@ -23,24 +26,21 @@ public class Partido {
 		return golesLocal;
 	}
 
-	public void setGolesLocal(int golesLocal) {
-		this.golesLocal = golesLocal;
-	}
 
 	public int getGolesVisitante() {
 		return golesVisitante;
 	}
 
-	public void setGolesVisitante(int golesVisitante) {
-		this.golesVisitante = golesVisitante;
-	}
-
+	
 	public int getJornada() {
 		return jornada;
 	}
 
-	public void setJornada(int jornada) {
-		this.jornada = jornada;
+	public void setJornada(int jornada){
+		if(jornada>=1 && jornada<=38) {
+			this.jornada = jornada;
+		}
+		
 	}
 
 
