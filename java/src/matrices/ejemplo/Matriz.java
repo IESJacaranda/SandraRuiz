@@ -24,6 +24,16 @@ public class Matriz {
 		int[] vector1 = {3,2};
 		int[] vector2 = {5,15,23};
 		System.out.println(formateaAString(concatenarVectores(vector1,vector2)));
+		
+		int[][] matriz1= {{3,1,0},{0,2,4},{0,5,1}};
+		int[][] matriz2= {{0,0,3},{5,2,1},{1,4,0}};
+		int[][] matriz3= {{0,4,1},{1,2,5},{3,0,0}};
+		System.out.println(formateaAString(rotarDerecha(matriz1)));
+		System.out.println(formateaAString(matriz2));
+		System.out.println(compararMatrices(matriz1,matriz2));
+		
+
+
 	}
 
 	/** Ejercicio 1
@@ -162,6 +172,39 @@ public class Matriz {
 		
 	}
 
+	
+	
+	
+	public static int[][] rotarDerecha(int[][] matriz) {
+		int size = matriz.length;
 
+	    int[][] newMatriz = new int[size][size];
+
+	    for(int i=0; i<size; i++) {
+	        for(int j=0; j<size; j++) {
+	            newMatriz[j][size-1-i] = matriz[i][j];
+	        }               
+	    }
+	    return newMatriz;
+	}    
+	    
+    public static int[][] rotarIzquierda(int[][] matriz) {
+    	int size = matriz.length;
+
+	    int[][] newMatriz = new int[size][size];
+
+       	for(int i=0; i<size; i++) {
+	        for(int j=0; j<size; j++) {
+	            newMatriz[size-1-j][i] = matriz[i][j];
+	        }               
+	    }
+		     
+	    return newMatriz;
+	}	
+
+    public static boolean compararMatrices(int[][]matrix1, int[][]matrix2) {
+    	
+    	return matrix2==rotarDerecha(matrix1);
+    }
 }
 
