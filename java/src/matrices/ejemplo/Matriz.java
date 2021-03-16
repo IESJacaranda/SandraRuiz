@@ -28,12 +28,20 @@ public class Matriz {
 		int[][] matriz1= {{3,1,0},{0,2,4},{0,5,1}};
 		int[][] matriz2= {{0,0,3},{5,2,1},{1,4,0}};
 		int[][] matriz3= {{0,4,1},{1,2,5},{3,0,0}};
-		System.out.println(formateaAString(rotarDerecha(matriz1)));
+		int[][] matriz4= {{0,4,1},{1,7,5},{3,0,0}};
 		System.out.println(formateaAString(matriz2));
-		System.out.println(compararMatrices(matriz1,matriz2));
-		
+		System.out.println(formateaAString(rotarMatriz(matriz1)));
+		System.out.println(formateaAString(rotarMatriz(rotarMatriz(matriz1))));
+		System.out.println(formateaAString(rotarMatriz(rotarMatriz(rotarMatriz(matriz1)))));
+		try {
+			System.out.println(sonMatricesIguales(rotarMatriz(matriz1),matriz2));
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
 
-
+	    int[][] matriz5= {{3,1,0,1},{0,2,4}};
+	    System.out.println(formateaAString(matriz5));
+	    System.out.println(formateaAString(rotarMatrizNoCuadrada(matriz5)));
 	}
 
 	/** Ejercicio 1
@@ -173,9 +181,13 @@ public class Matriz {
 	}
 
 	
+	/**Ejercicio 5, parte 1
+	 * Este método recibe una matriz cuadrada y la rota a la derecha
+	 * @param matriz
+	 * @return matriz rotada a la derecha
+	 */
 	
-	
-	public static int[][] rotarDerecha(int[][] matriz) {
+	public static int[][] rotarMatriz(int[][] matriz) {
 		int size = matriz.length;
 
 	    int[][] newMatriz = new int[size][size];
@@ -188,23 +200,59 @@ public class Matriz {
 	    return newMatriz;
 	}    
 	    
-    public static int[][] rotarIzquierda(int[][] matriz) {
-    	int size = matriz.length;
+	/**Ejercicio 5, parte 2
+	 * Este método recibe dos matrices y las compara, comprobando si son
+	 * la misma pero rotada.
+	 * @param matrix1
+	 * @param matrix2
+	 * @return true si son la misma matriz, false si no lo son.
+	 */
 
-	    int[][] newMatriz = new int[size][size];
+    public static boolean sonMatricesIguales(int[][]matrix1, int[][]matrix2) throws Exception {
+    	boolean sonIguales = true;
+    	
+    	if(matrix1!=null && matrix2!=null && matrix1.length==matrix2.length 
+    			&& matrix1[0]!=null && matrix2[0]!=null 
+    			&& matrix1[0].length== matrix2[0].length) {
+    		for(int i=0; i<matrix1.length && sonIguales;i++) {
+    			for(int j=0; j<matrix1[i].length && sonIguales;j++) {
+    				if(matrix1[i][j] != matrix2[i][j]) {
+    					sonIguales = false;
+    				}
+    			}
+    		}
+    	}else {
+    		throw new Exception ("Las matrices no se pueden comparar");
+    	}
+    	
+    	
+    	return sonIguales;
+    }
+    
+    
+    /**Ejercicio 6
+     * No funciona.
+     * @param matriz
+     * @return
+     */
+    	
+    public static int[][] rotarMatrizNoCuadrada(int[][] matriz) {
 
-       	for(int i=0; i<size; i++) {
-	        for(int j=0; j<size; j++) {
-	            newMatriz[size-1-j][i] = matriz[i][j];
+	    int fila=0;
+	    int columna=0;
+	    
+		int[][] newMatriz = new int[fila][columna];
+		int k;
+		
+	    for(int i=0; i<fila; i++) {
+	    	k=0;
+	        for(int j=fila-1; j>=0; j--) {
+	            newMatriz[i][k] = matriz[j][i]; 
+	            k++;
 	        }               
 	    }
-		     
 	    return newMatriz;
-	}	
-
-    public static boolean compararMatrices(int[][]matrix1, int[][]matrix2) {
-    	
-    	return matrix2==rotarDerecha(matrix1);
-    }
+	}    
 }
+
 
