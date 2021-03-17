@@ -1,5 +1,7 @@
 package matrices.ejemplo;
 
+import relacion8.ej1.Numero;
+import relacion8.ej2.Vector;
 
 public class Matriz {
 	
@@ -10,21 +12,25 @@ public class Matriz {
 	public static final String SALTO_LINEA = "\n";
 	
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+	
+		//Llamada ejercicio 1
+		trabajandoConMatrix();
 		
-		/*trabajandoConMatrix();
-		
+		//Comprobación ejercicio 2
 		int[][] matrix = {{1,2,3}, {4,5}, {6,7,8,9}};
 		System.out.println(formateaAString(matrix));
 		
+		//Comprobación ejercicio 3
 		int[][] matrizA = {{1,2}, {3,4}};
 		int[][] matrizB = {{1,2}, {3,4}};
 		System.out.println(formateaAString(sumarMatrices(matrizA, matrizB)));
-	*/
+		
+		//Comprobación ejercicio 4
 		int[] vector1 = {3,2};
 		int[] vector2 = {5,15,23};
 		System.out.println(formateaAString(concatenarVectores(vector1,vector2)));
 		
+		//Comprobación ejercicio 5
 		int[][] matriz1= {{3,1,0},{0,2,4},{0,5,1}};
 		int[][] matriz2= {{0,0,3},{5,2,1},{1,4,0}};
 		int[][] matriz3= {{0,4,1},{1,2,5},{3,0,0}};
@@ -38,25 +44,44 @@ public class Matriz {
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
-
-	    int[][] matriz5= {{3,1,0,1},{0,2,4}};
+		
+		//Comprobación ejercicio 6
+	    int[][] matriz5= {{3,1,0,1},{0,2,4,5},{7,8,9,1}};
+	    int[][] matriz6= {{7,0,3},{8,2,1},{9,4,0},{1,5,1}};
 	    System.out.println(formateaAString(matriz5));
-	    System.out.println(formateaAString(rotarMatrizNoCuadrada(matriz5)));
-	}
+	    System.out.println(formateaAString(rotarMatrizNoCuadradaDerecha(matriz5)));
+	    System.out.println(formateaAString(rotarMatrizNoCuadradaInversa(matriz5)));
+	    System.out.println(formateaAString(rotarMatrizNoCuadradaIzquierda(matriz5)));
+	    
+	    try {
+			System.out.println(compruebaMatricesEquivalentes(matriz5, rotarMatrizNoCuadradaDerecha(matriz5)));
+		} catch (DimensionNoAdecuadaException e) {
+			System.out.println(e.getMessage());
+		}
+	    
+	    //Comprobación método Numero de paquete relacion8.ej1
+	    int[] vector = {1,2,3,4,5};
+	    //System.out.println(formateaAString(Numero.invertirVector(vector)));
+	    //System.out.println(formateaAString(Numero.invertirVector(Numero.pedirNumeros())));
+	    
+	    //Comprobación método Vector de paquete relacion8.ej2
+	    System.out.println(formateaAString(Vector.desplazarElementosDerecha(vector)));
+	    System.out.println(formateaAString(Vector.desplazarElementosIzquierda(vector)));
+		}
 
 	/** Ejercicio 1
 	 * Este método genera una matriz cuadrada con 1 en diagonal.
 	 */
 	public static void trabajandoConMatrix() {
 		
-		/*int[] vector = new int[3];
+		int[] vector = new int[3];
 		System.out.println(vector);
 		
 		System.out.println(vector[vector.length-2]);
-		*/
 		
 		
-		/*int[][] matrix;
+		
+		int[][] matrix;
 		matrix = new int[3][2];
 	
 		for(int i=0; i<matrix.length; i++) {
@@ -64,14 +89,14 @@ public class Matriz {
 				matrix[i][j]=1;
 				System.out.println(matrix[i][j]);
 			}
-		}*/
+		}
 		
-		/*int[][] matrix = new int [4][4];
+		int[][] matrix1 = new int [4][4];
 		
-		for (int i=0; i<matrix.length;i++) { //recorre las filas
-			matrix[i][i] = 1;
-			for(int j=0;j<matrix[i].length;j++) { //recorre las columnas
-				System.out.print(matrix[i][j] + " ");	
+		for (int i=0; i<matrix1.length;i++) { //recorre las filas
+			matrix1[i][i] = 1;
+			for(int j=0;j<matrix1[i].length;j++) { //recorre las columnas
+				System.out.print(matrix1[i][j] + " ");	
 			}System.out.println();
 		}
 		System.out.println("---------");
@@ -83,7 +108,7 @@ public class Matriz {
 				System.out.print(matrix2[i][j] + " ");	
 			}System.out.println();
 		}
-	*/	
+		
 		
 	}
 	
@@ -208,7 +233,7 @@ public class Matriz {
 	 * @return true si son la misma matriz, false si no lo son.
 	 */
 
-    public static boolean sonMatricesIguales(int[][]matrix1, int[][]matrix2) throws Exception {
+    public static boolean sonMatricesIguales(int[][]matrix1, int[][]matrix2) throws DimensionNoAdecuadaException {
     	boolean sonIguales = true;
     	
     	if(matrix1!=null && matrix2!=null && matrix1.length==matrix2.length 
@@ -222,7 +247,7 @@ public class Matriz {
     			}
     		}
     	}else {
-    		throw new Exception ("Las matrices no se pueden comparar");
+    		throw new DimensionNoAdecuadaException();
     	}
     	
     	
@@ -230,29 +255,69 @@ public class Matriz {
     }
     
     
-    /**Ejercicio 6
-     * No funciona.
-     * @param matriz
-     * @return
+    /**Ejercicio 6, rotar derecha
+     * Este método recibe una matriz no cuadrada y
+     * la rota a la derecha.
+     * @param matriz no cuadrada
+     * @return matriz no cuadrada rotada a la derecha.
      */
     	
-    public static int[][] rotarMatrizNoCuadrada(int[][] matriz) {
+    public static int[][] rotarMatrizNoCuadradaDerecha(int[][] matriz) {
 
-	    int fila=0;
-	    int columna=0;
-	    
-		int[][] newMatriz = new int[fila][columna];
-		int k;
-		
-	    for(int i=0; i<fila; i++) {
-	    	k=0;
-	        for(int j=fila-1; j>=0; j--) {
-	            newMatriz[i][k] = matriz[j][i]; 
-	            k++;
+    	int[][] newMatriz = new int[matriz[0].length][matriz.length];
+				
+	    for(int i=0; i<matriz.length; i++) {
+	    	for(int j=0; j<matriz[i].length; j++) {
+	            newMatriz[j][matriz.length-1-i] = matriz[i][j];
 	        }               
 	    }
 	    return newMatriz;
 	}    
+    
+    /**Ejercicio 6, rotar inversa
+     * Este método recibe una matriz no cuadrada y, usando el método
+     * rotarMatrizNoCuadradaDerecha, hace 2 rotaciones y la rota realmente
+     * a la inversa
+     * @param matriz no cuadrada
+     * @return matriz no cuadrada rotada a la inversa.
+     */
+    public static int[][] rotarMatrizNoCuadradaInversa(int[][] matriz) {
+    	return rotarMatrizNoCuadradaDerecha(rotarMatrizNoCuadradaDerecha(matriz));
+    }
+    
+    
+    /**Ejercicio 6, rotar izquierda
+     * Este método recibe una matriz no cuadrada y, usando el método
+     * rotarMatrizNoCuadradaDerecha (1 rotación a la derecha) y el 
+     * método rotarMatrizNoCuadradaInversa (2 rotaciones a la derecha),
+     * la rota a la izquierda
+     * @param matriz no cuadrada
+     * @return matriz no cuadrada rotada a la izquierda.
+     */
+    public static int[][] rotarMatrizNoCuadradaIzquierda(int[][] matriz) {
+    	return rotarMatrizNoCuadradaDerecha(rotarMatrizNoCuadradaInversa(matriz));
+    }
+    
+    
+    
+    /**Ejercicio 6, comprobar equivalencia
+     * Este método comprueba si las matrices que recibe como argumentos son equivalentes,
+     * es decir, si la 1ª y la 2ª contienen los mismos elementos pero,
+     * posiblemente con alguna rotación (rotación izquierda, derecha o inversa)
+     * 
+     * @param ma, matriz original
+     * @param mb, matriz original o rotada
+     * @return true si son equivalentes y false en caso contrario
+     * @throws DimensionNoAdecuadaException
+     */
+    public static boolean compruebaMatricesEquivalentes(int[][] ma, int[][] mb) throws DimensionNoAdecuadaException {
+    	
+    	return sonMatricesIguales(ma,mb)
+    			|| sonMatricesIguales(ma, rotarMatrizNoCuadradaInversa(mb))
+    			|| sonMatricesIguales(ma, rotarMatrizNoCuadradaIzquierda(mb))
+    			|| sonMatricesIguales(ma, rotarMatrizNoCuadradaDerecha(mb));
+    	
+    }
 }
 
 
