@@ -1,6 +1,7 @@
 package matrices.ejemplo;
 
 import relacion8.ej1.Numero;
+import relacion8.ej2.Interfaz;
 import relacion8.ej2.Vector;
 
 public class Matriz {
@@ -68,6 +69,10 @@ public class Matriz {
 	    System.out.println(formateaAString(Vector.desplazarElementosDerecha(vector)));
 	    System.out.println(formateaAString(vector));
 	    System.out.println(formateaAString(Vector.desplazarElementosIzquierda(vector)));
+	    
+	    //Comprobación método Vector de paquete relacion8.ej2
+	    Interfaz.introducirElementos();
+	    
 		}
 
 	/** Ejercicio 1
