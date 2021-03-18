@@ -66,6 +66,7 @@ public class Matriz {
 	    
 	    //Comprobación método Vector de paquete relacion8.ej2
 	    System.out.println(formateaAString(Vector.desplazarElementosDerecha(vector)));
+	    System.out.println(formateaAString(vector));
 	    System.out.println(formateaAString(Vector.desplazarElementosIzquierda(vector)));
 		}
 
