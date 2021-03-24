@@ -9,6 +9,8 @@ public class Delfin extends Cetaceo {
 		this.tiempoSumergido = tiempoSumergido;
 	}
 	
-	
+	public int getTiempoSumergido() {
+		return this.getTiempoSumergido();
+	}
 	
 }

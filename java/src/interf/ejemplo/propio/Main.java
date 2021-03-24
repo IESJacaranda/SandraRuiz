@@ -6,9 +6,10 @@ public class Main {
 		
 		
 		Quiroptero murcielago = new Murcielago(20, 2, 3, "Fruta");
-		Murcielago murcielago2 = new Murcielago(30, 4, 6, "Sangre animal");
-		System.out.println(((Murcielago) murcielago).seAlimenta());
-		System.out.println(murcielago2.seAlimenta());
+		Murcielago murci = (Murcielago) murcielago;
+		System.out.println(murci.seAlimenta());
+		System.out.println(murcielago.getNumeroMamas());
+		System.out.println(murcielago.getTiempoGestacion());
 		
 		Delfin delfin = new Delfin (30, 2, 11, "Peces", 50);
 		System.out.println(delfin.tieneBranquias());
